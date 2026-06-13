@@ -8,9 +8,15 @@ https://docs.djangoproject.com/en/6.0/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
-from django.core.wsgi import get_wsgi_application
+# Mengarahkan ke folder utama kamu di PythonAnywhere
+path = '/home/aisyarkaanabdurrahman/WEBSEKOLAH-NEW'
+if path not in sys.path:
+    sys.path.append(path)
 
+# Mengarahkan ke nama folder project django kamu (websekolah)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'websekolah.settings')
 
+from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
